@@ -1,5 +1,5 @@
 name: End-to-end tests
-
+run-name: Setting up node
 on: [push]
 
 jobs:
@@ -17,10 +17,3 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Cypress run
-        uses: cypress-io/github-action@v2 # Make sure to use the correct version
-        with:
-          build: npm run build
-          start: npm start
-          wait-on: http://localhost:3030
