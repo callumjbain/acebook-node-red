@@ -5,10 +5,6 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x]
-        mongodb-version: ['5.0']
     
     steps:
       - name: Checkout
@@ -17,12 +13,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14' # or the version you require
+          node-version: '21' # or the version you require
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@1.10.0
         with:
-          mongodb-version: ${{ matrix.mongodb-version }}
+          mongodb-version: '5.0'
 
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
