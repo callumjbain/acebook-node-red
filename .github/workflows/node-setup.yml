@@ -5,6 +5,10 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+        mongodb-version: ['4.2', '4.4', '5.0', '6.0']
     
     steps:
       - name: Checkout
@@ -27,3 +31,14 @@ jobs:
         with: 
           start: npm run start:test
           wait-on: http://localhost:3030
+
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.10.0
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
+    
+      - run: npm install
+    
+      - run: npm test
+        env:
+          CI: true
