@@ -17,7 +17,7 @@ jobs:
           uses: actions/checkout@v1
 
         - name: Create ZIP Deployment Package
-          run: zip -r ${ env.DEPLOY_PACKAGE_NAME )} •/ -x *•git*
+          run: zip -r ${{ env.DEPLOY_PACKAGE_NAME }} •/ -x *•git*
 
         - name: Configure AWS credentials
           uses: aws-actions/configure-aws-credentials@v1
@@ -27,7 +27,7 @@ jobs:
             aws-region: ${{ env.AWS_REGION_NAME }}
 
         - name: Copy Deployment package to S3 bucket
-          run : aws S3 cp ${f env.DEPLOY_PACKAGE_NAME }} S3://$(f env. EB_PACKAGE_S3_BUCKET_NAME }}/
+          run : aws S3 cp ${{ env.DEPLOY_PACKAGE_NAME }} S3://${{ env.EB_PACKAGE_S3_BUCKET_NAME }}/
 
         
     my_cd_part: 
@@ -46,7 +46,7 @@ jobs:
           run: aws deploy create-deployment \
             --application-name acebook-red \
             --deployment-group-name production-red \
-            --s3-location bucket=arn:aws:s3:::acebook-red-bucket,key=${ env.DEPLOY_PACKAGE_NAME )},bundleType=zip
+            --s3-location bucket=arn:aws:s3:::acebook-red-bucket,key=${{ env.DEPLOY_PACKAGE_NAME }},bundleType=zip
             
             
         
