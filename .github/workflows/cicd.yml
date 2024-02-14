@@ -4,7 +4,7 @@ env:
     EB_PACKAGE_S3_BUCKET_NAME : "acebook-red-bucket"
     EB_APPLICATION_NAME : "acebook-node-red"
     EB_ENVIRONMENT_NAME : "acebook-red"
-    DEPLOY_PACKAGE_NAME : "acebook-node-red_${{ github.sha }}.zip"
+    # DEPLOY_PACKAGE_NAME : "acebook-node-red_${{ github.sha }}.zip"
     AWS_REGION_NAME : "eu-west-2"
 on: [push]
 
@@ -16,8 +16,8 @@ jobs:
         - name: Git clone our repo
           uses: actions/checkout@v1
 
-        - name: Create ZIP Deployment Package
-          run: zip -r ${{ env.DEPLOY_PACKAGE_NAME }} •/ -x *•git*
+        # - name: Create ZIP Deployment Package
+        #   run: zip -r ${{ env.DEPLOY_PACKAGE_NAME }} •/ -x *•git*
 
         - name: Configure AWS credentials
           uses: aws-actions/configure-aws-credentials@v1
