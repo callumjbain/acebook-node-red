@@ -2,8 +2,6 @@ name: CI-CD Pipeline
 run-name: CI-CD
 env: 
     EB_PACKAGE_S3_BUCKET_NAME : "acebook-red-bucket"
-    EB_APPLICATION_NAME : "acebook-node-red"
-    EB_ENVIRONMENT_NAME : "acebook-red"
     DEPLOY_PACKAGE_NAME : "acebook-node-red_${{ github.sha }}.zip"
     AWS_REGION_NAME : "eu-west-2"
 on: [push]
