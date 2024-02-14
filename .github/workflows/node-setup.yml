@@ -1,5 +1,5 @@
 name: End-to-end tests
-run-name: YAML Deploment
+run-name: YAML Deployment
 on: [push]
 
 jobs:
@@ -41,17 +41,3 @@ jobs:
 
       - name: Run Lint
         run: npm run lint
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: AKIAZVHCKJRW2XEF7GMC
-          aws-secret-access-key: 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
-          aws-region: eu-west-2
-
-      - name: Deploy to EC2 using CodeDeploy
-        run: |
-          aws deploy create-deployment \
-            --application-name acebook-red \
-            --deployment-group-name production-red \
-            --s3-location bucket=arn:aws:s3:::acebook-red-bucket
