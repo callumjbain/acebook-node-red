@@ -47,6 +47,7 @@ jobs:
         with:
           aws-access-key-id: AKIAZVHCKJRW2XEF7GMC
           aws-secret-access-key: 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
+          aws-region: eu-west-2
 
       - name: Deploy to EC2 using CodeDeploy
         run: |
