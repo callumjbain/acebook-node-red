@@ -1,12 +1,9 @@
 #!/bin/bash
 
-# Set ownership for application files
-chown -R ec2-user:ec2-user /var/www/html/*
+#!/bin/bash
+set -e
 
-
-# Perform any other necessary post-installation tasks
-
-
-# This hook is executed after the new application revision is installed. 
-# It's commonly used to perform tasks such as setting permissions, 
-# configuring files, or preparing the environment for the application to start.
+# This command, when included at the beginning of a shell script, 
+# causes the script to exit immediately if any command exits with a non-zero status. 
+# It helps to catch errors early in the script execution and 
+# prevents the script from continuing with potentially invalid or incomplete results.

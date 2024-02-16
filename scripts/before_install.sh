@@ -1,7 +1,9 @@
 #!/bin/bash
+set -e
 
-# Stop the application service
-systemctl stop my-application.service
+# Execute the install file
+/install.rb
+
 
 # Clean up old files or directories
 rm -rf /var/www/html/*
