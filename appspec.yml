@@ -25,9 +25,32 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/acebook-red
+    destination: /var/www/html/
+
+permissions:
+  - object: /
+    pattern: "**"
+    owner: ec2-user
+    group: ec2-user
+
 hooks:
-    ApplicationStart:
-      - location: scripts/start_application.sh
-        timeout: 300
-        runas: root
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      timeout: 300
+      runas: ec2-user
+  AfterInstall:
+    - location: scripts/after_install.sh
+      timeout: 300
+      runas: ec2-user
+  ApplicationStart:
+    - location: scripts/start_application.sh
+      timeout: 300
+      runas: ec2-user
+  ApplicationStop:
+    - location: scripts/stop_application.sh
+      timeout: 300
+      runas: ec2-user
+  ValidateService:
+    - location: scripts/validate_service.sh
+      timeout: 300
+      runas: ec2-user
