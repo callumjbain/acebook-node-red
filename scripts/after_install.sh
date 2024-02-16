@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set permissions for application files
-chown -R myuser:mygroup /var/www/html/*
+chown -R ec2-user:ec2-user /var/www/html/*
 
 # Perform any other necessary post-installation tasks
 
