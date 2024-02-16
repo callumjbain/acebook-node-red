@@ -24,7 +24,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/myapp
+    destination: /var/www/html/acebook-node-red
 hooks:
   BeforeInstall:
     - location: scripts/stop_server.sh
