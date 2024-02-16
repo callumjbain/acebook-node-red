@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if the application service is running
-if systemctl is-active --quiet acebook-red.service; then
+if systemctl is-active --quiet my-application.service; then
     echo "Application is running."
     exit 0
 else

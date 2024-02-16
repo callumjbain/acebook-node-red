@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Stop the application service
-systemctl stop acebook-red.service
+systemctl stop my-application.service
 
 # Clean up old files or directories
 rm -rf /var/www/html/*

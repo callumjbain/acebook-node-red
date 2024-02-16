@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start the application service
-systemctl start acebook-red.service
+systemctl start my-application.service
 
 # Perform any other actions required to start the application
 
