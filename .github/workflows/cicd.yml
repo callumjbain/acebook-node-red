@@ -50,3 +50,4 @@ jobs:
               --deployment-group-name production-red \
               --s3-location "bucket=${{ env.EB_PACKAGE_S3_BUCKET_NAME }},key=${{ env.DEPLOY_PACKAGE_NAME }},bundleType=zip"
           
+              
