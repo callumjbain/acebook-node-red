@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Stop the application service
-systemctl stop my-application.service
+systemctl stop acebook-red.service
 
 # Perform any other actions required to stop the application
 
